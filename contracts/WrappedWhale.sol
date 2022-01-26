@@ -11,8 +11,8 @@ contract WrappedWhale is  ERC20Pausable, ReentrancyGuard, Ownable {
         WhaleToken = IERC20(_whaleToken);
     }
 
-    bool mintPaused;
-    bool burnPaused;
+    bool public mintPaused;
+    bool public burnPaused;
     mapping(address => bool) public mintBlackList;
     mapping(address => bool) public burnBlackList;
 
