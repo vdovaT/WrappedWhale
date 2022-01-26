@@ -7,6 +7,10 @@ contract WrappedWhale is  ERC20Pausable, ReentrancyGuard, Ownable {
 
     IERC20 WhaleToken;
 
+    function decimals() public view virtual override returns (uint8) {
+        return 9;
+    }
+
     constructor(address _whaleToken) ERC20("Wrapped WhaleFall", "WWHALE") {
         WhaleToken = IERC20(_whaleToken);
     }
